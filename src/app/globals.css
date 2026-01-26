@@ -1,8 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary - Coral/Salmon */
+  --coral: #FF6B6B;
+  --coral-light: #FF8A8A;
+  --coral-dark: #E85555;
+
+  /* Accent - Electric Purple */
+  --purple: #A855F7;
+  --purple-light: #C084FC;
+  --purple-dark: #9333EA;
+
+  /* Secondary - Warm Orange */
+  --orange: #FB923C;
+  --orange-light: #FDBA74;
+  --orange-dark: #F97316;
+
+  /* Warm Neutrals */
+  --cream: #FFFBF5;
+  --cream-dark: #FFF5EB;
+  --warm-gray-50: #FAF9F7;
+  --warm-gray-100: #F5F3F0;
+  --warm-gray-200: #E8E4DF;
+  --warm-gray-300: #D4CEC6;
+  --warm-gray-400: #A8A095;
+  --warm-gray-500: #78716C;
+  --warm-gray-600: #57534E;
+  --warm-gray-700: #44403C;
+  --warm-gray-800: #292524;
+  --warm-gray-900: #1C1917;
+
+  /* Semantic */
+  --background: var(--cream);
+  --background-secondary: var(--cream-dark);
+  --foreground: var(--warm-gray-900);
+  --foreground-muted: var(--warm-gray-500);
 }
 
 @theme inline {
@@ -12,15 +44,163 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background: rgba(168, 85, 247, 0.2);
+  color: var(--warm-gray-900);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--warm-gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--warm-gray-400);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--coral) 0%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, var(--coral) 0%, var(--orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-coral {
+  box-shadow: 0 0 60px rgba(255, 107, 107, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.3);
+}
+
+/* Soft card */
+.soft-card {
+  background: white;
+  border: 1px solid var(--warm-gray-200);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+.soft-card:hover {
+  border-color: var(--warm-gray-300);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Gradient border */
+.gradient-border-warm {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+}
+
+.gradient-border-warm::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--coral), var(--purple));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Animate gradient */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Pulse soft */
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+/* Wave animation for voice */
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.animate-wave {
+  animation: wave 0.8s ease-in-out infinite;
 }
