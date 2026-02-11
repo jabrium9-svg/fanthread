@@ -93,7 +93,7 @@ function Navigation() {
           <a href="#for-creators" className="text-[var(--warm-gray-600)] hover:text-[var(--warm-gray-900)] transition-colors text-sm font-medium">
             For Creators
           </a>
-          <a href="https://app.jabrium.com" className="px-5 py-2 bg-gradient-to-r from-[var(--coral)] to-[var(--purple)] text-white rounded-full text-sm font-medium hover:shadow-lg hover:shadow-[var(--coral)]/20 transition-all">
+          <a href="https://app.jabrium.com?source=fanthread&creator=website" className="px-5 py-2 bg-gradient-to-r from-[var(--coral)] to-[var(--purple)] text-white rounded-full text-sm font-medium hover:shadow-lg hover:shadow-[var(--coral)]/20 transition-all">
             Get Early Access
           </a>
         </div>
@@ -139,7 +139,7 @@ function HeroSection() {
             onChange={(e) => setEmail(e.target.value)}
             className="w-full sm:flex-1 px-6 py-4 rounded-full border border-[var(--warm-gray-200)] bg-white focus:outline-none focus:border-[var(--coral)] focus:ring-2 focus:ring-[var(--coral)]/20 transition-all text-[var(--warm-gray-900)]"
           />
-          <a href="https://app.jabrium.com" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[var(--coral)] to-[var(--coral-dark)] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-[var(--coral)]/30 transition-all hover:-translate-y-0.5 inline-block text-center">
+          <a href="https://app.jabrium.com?source=fanthread&creator=website" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[var(--coral)] to-[var(--coral-dark)] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-[var(--coral)]/30 transition-all hover:-translate-y-0.5 inline-block text-center">
             Join the Waitlist
           </a>
         </div>
@@ -572,7 +572,7 @@ function CTASection() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full sm:flex-1 px-6 py-4 rounded-full border border-[var(--warm-gray-200)] bg-white focus:outline-none focus:border-[var(--coral)] focus:ring-2 focus:ring-[var(--coral)]/20 transition-all text-[var(--warm-gray-900)]"
             />
-            <a href="https://app.jabrium.com" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[var(--coral)] to-[var(--purple)] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-[var(--coral)]/30 transition-all hover:-translate-y-0.5 inline-block text-center">
+            <a href="https://app.jabrium.com?source=fanthread&creator=website" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[var(--coral)] to-[var(--purple)] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-[var(--coral)]/30 transition-all hover:-translate-y-0.5 inline-block text-center">
               Get Early Access
             </a>
           </div>
